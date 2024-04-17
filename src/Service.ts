@@ -89,6 +89,10 @@ function WorkOnNext() {
     // Return Results
     item[1].status(StepsComplete ? 200 : 500).json(WorkResults);
     (StepsComplete ? Info : Error)(item[0], "Results:", WorkResults)
+
+    // Next please!
+    workingQueue = false
+    WorkOnNext()
 }
 
 express()
